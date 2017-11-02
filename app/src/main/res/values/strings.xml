@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Figurettis</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+    <string name="tituloLanding"><b>¡Compartí tus figuritas repetidas e intercambialas!</b></string>
+    <string name="paso1">Publicá las figuritas que desees cambiar</string>
+    <string name="paso2">Buscá las publicaciones que te interesen</string>
+    <string name="paso3">Comunicate con la persona y relizá el intercambio</string>
+    <string name="botonComenzarLanding"><b>¡Comenzar!</b></string>
+    <string name="title_activity_login">Iniciar sesión</string>
+    <string name="api_key_facebook">370225443418186</string>
+    <string name="api_key_twitter">BdHILX7dxIYjOOaYNemxbexop</string>
+    <string name="btnAceptarLogin"><b>Aceptar</b></string>
+    <string name="btnRegistrarseLogin"><b>Registrarme</b></string>
+</resources>

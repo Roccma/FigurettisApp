@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.mauro.figurettisapp.MainActivity"
+    tools:showIn="@layout/app_bar_main"
+    android:background="@mipmap/fondo_azul">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/titulo7"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/imgTitulo"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tituloLanding"
+                    android:layout_below="@id/imgTitulo"
+                    android:padding="16dp"
+                    android:textColor="@color/colorTitulo"
+                    android:layout_marginTop="16dp"
+                    android:textSize="24dp"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:id="@+id/txtTituloLanding"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorWhite"
+                    android:layout_below="@+id/txtTituloLanding"
+                    android:text="@string/paso1"
+                    android:padding="16dp"
+                    android:textSize="20dp"
+                    android:id="@+id/txtPaso1"
+                    android:textAlignment="center"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorWhite"
+                    android:layout_below="@+id/txtPaso1"
+                    android:text="@string/paso2"
+                    android:padding="16dp"
+                    android:textSize="20dp"
+                    android:id="@+id/txtPaso2"
+                    android:textAlignment="center"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorWhite"
+                    android:layout_below="@+id/txtPaso2"
+                    android:text="@string/paso3"
+                    android:padding="16dp"
+                    android:textSize="20dp"
+                    android:id="@+id/txtPaso3"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:layout_marginBottom="8dp"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/boton"
+                    android:text="@string/botonComenzarLanding"
+                    android:layout_below="@+id/txtPaso3"
+                    android:textColor="@color/colorWhite"
+                    android:layout_margin="16dp"
+                    android:id="@+id/btnComenzar"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_below="@+id/btnComenzar"/>
+            </RelativeLayout>
+        </ScrollView>
+
+</RelativeLayout>
