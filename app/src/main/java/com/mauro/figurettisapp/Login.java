@@ -3,6 +3,7 @@ package com.mauro.figurettisapp;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -42,6 +43,8 @@ import com.twitter.sdk.android.core.TwitterAuthConfig;
 import com.twitter.sdk.android.core.TwitterException;
 import com.twitter.sdk.android.core.TwitterSession;
 import com.twitter.sdk.android.core.identity.TwitterLoginButton;
+
+import java.net.URI;
 
 import io.fabric.sdk.android.Fabric;
 
@@ -222,7 +225,31 @@ public class Login extends AppCompatActivity
         } else if (id == R.id.nav_registrarse) {
 
         } else if (id == R.id.nav_realidadAumentada) {
-
+            Intent ar = getPackageManager().getLaunchIntentForPackage("com.Figurettis.Figurettis");
+            if (ar != null) {
+                getApplicationContext().startActivity(ar);
+            }
+            else{
+                AlertDialog.Builder builder = new AlertDialog.Builder(Login.this)
+                        .setMessage("Para ejecutar esta opción, se necesita tener instalado la aplicación 'Figurettis AR' ¿Desea descargarla?")
+                        .setTitle("Aplicación no encontrada")
+                        .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                            Uri uri = Uri.parse("http://www.mediafire.com/file/3f5iq9sks1bak5x/FigurettisAR.apk");
+                            Intent i = new Intent(Intent.ACTION_VIEW, uri);
+                            startActivity(i);
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                            }
+                        });
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
         }  else if (id == R.id.nav_ayuda) {
 
         } else if (id == R.id.nav_salir) {
