@@ -8,6 +8,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
@@ -20,9 +22,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.CookieManager;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.facebook.AccessToken;
@@ -39,21 +39,26 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity
+public class Ayuda extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private TextView txtPaso1;
-    private TextView txtPaso2;
-    private TextView txtPaso3;
-    private Button btnComenzar;
     private NavigationView nav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_ayuda);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -61,22 +66,6 @@ public class MainActivity extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        txtPaso1 = (TextView) findViewById(R.id.txtPaso1);
-        txtPaso2 = (TextView) findViewById(R.id.txtPaso2);
-        txtPaso3 = (TextView) findViewById(R.id.txtPaso3);
-        Button btnComenzar = (Button) findViewById(R.id.btnComenzar);
-
-        txtPaso1.setCompoundDrawablesWithIntrinsicBounds(0, R.mipmap.icono_paso_1_landing, 0, 0);
-        txtPaso2.setCompoundDrawablesWithIntrinsicBounds(0, R.mipmap.icono_paso_2_landing, 0, 0);
-        txtPaso3.setCompoundDrawablesWithIntrinsicBounds(0, R.mipmap.icono_paso_3_landing, 0, 0);
-
-        btnComenzar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, Login.class);
-                startActivity(i);
-            }
-        });
         nav = (NavigationView) findViewById(R.id.nav_view);
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         String session = sharedPref.getString("session", "no");
@@ -118,15 +107,13 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-
 
         return super.onOptionsItemSelected(item);
     }

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_ayuda"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.mauro.figurettisapp.Ayuda"
+    tools:showIn="@layout/app_bar_ayuda"
+    android:background="@mipmap/fondo_azul">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ayuda1"
+                android:textSize="24dp"
+                android:textColor="@color/colorTitulo"
+                android:id="@+id/ayuda1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ayuda2"
+                android:textSize="20dp"
+                android:textColor="@color/colorWhite"
+                android:id="@+id/ayuda2"
+                android:layout_below="@id/ayuda1"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ayuda3"
+                android:textSize="24dp"
+                android:textColor="@color/colorTitulo"
+                android:id="@+id/ayuda3"
+                android:layout_below="@id/ayuda2"
+                android:layout_marginTop="24dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ayuda4"
+                android:textSize="20dp"
+                android:textColor="@color/colorWhite"
+                android:id="@+id/ayuda4"
+                android:layout_below="@id/ayuda3"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ayuda5"
+                android:textSize="20dp"
+                android:textColor="@color/colorWhite"
+                android:id="@+id/ayuda5"
+                android:layout_below="@id/ayuda4"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ayuda6"
+                android:textSize="20dp"
+                android:textColor="@color/colorWhite"
+                android:id="@+id/ayuda6"
+                android:layout_below="@id/ayuda5"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ayuda7"
+                android:textSize="20dp"
+                android:textColor="@color/colorWhite"
+                android:id="@+id/ayuda7"
+                android:layout_below="@id/ayuda6"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ayuda8"
+                android:textSize="20dp"
+                android:textColor="@color/colorWhite"
+                android:id="@+id/ayuda8"
+                android:layout_below="@id/ayuda7"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ayuda9"
+                android:textSize="24dp"
+                android:textColor="@color/colorTitulo"
+                android:id="@+id/ayuda9"
+                android:layout_below="@id/ayuda8"
+                android:layout_marginTop="24dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ayuda10"
+                android:textSize="20dp"
+                android:textColor="@color/colorWhite"
+                android:id="@+id/ayuda10"
+                android:layout_below="@id/ayuda9"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ayuda11"
+                android:textSize="20dp"
+                android:textColor="@color/colorWhite"
+                android:id="@+id/ayuda11"
+                android:layout_below="@id/ayuda10"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ayuda12"
+                android:textSize="20dp"
+                android:textColor="@color/colorWhite"
+                android:id="@+id/ayuda12"
+                android:layout_below="@id/ayuda11"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="@color/colorWhite"
+                android:id="@+id/ayuda13"
+                android:layout_below="@id/ayuda12"
+                android:layout_marginTop="8dp"/>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

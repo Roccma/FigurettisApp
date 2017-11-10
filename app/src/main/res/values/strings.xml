@@ -13,4 +13,22 @@
     <string name="api_key_twitter">BdHILX7dxIYjOOaYNemxbexop</string>
     <string name="btnAceptarLogin"><b>Aceptar</b></string>
     <string name="btnRegistrarseLogin"><b>Registrarme</b></string>
+    <string name="title_activity_no_logueado_menu">NoLogueadoMenu</string>
+    <string name="title_activity_figuritas">Figuritas</string>
+    <string name="title_activity_logueado_menu">LogueadoMenu</string>
+    <string name="title_activity_ayuda">Ayuda</string>
+    <string name="ayuda1"><b>¿Qué es Figurettis?</b></string>
+    <string name="ayuda2">Figurettis es una aplicación móvil interactiva que busca facilitar la colección e intercambio de figuritas del álbum del Mundial Rusia 2018, creando una red de contactos y eventos.</string>
+    <string name="ayuda3"><b>Principales funcionalidades</b></string>
+    <string name="ayuda4"><b>- Publicación de figuritas: </b>\nPermite tener una serie de figurtias propias publicadas esperando a ser intercambiadas a otros usuarios.</string>
+    <string name="ayuda5"><b>- Búsqueda de figuritas: </b>\nLocalizar las opciones de intercambios disponibles tanto por jugador o ciudad en la que se desea hacer el cambio.</string>
+    <string name="ayuda6"><b>- Eventos: </b>\nOrganización de actividades en determinado lugar, fecha y hora.</string>
+    <string name="ayuda7"><b>- Realidad aumentada: </b>\nDiviértete escaneando las figuritas que tienes.</string>
+    <string name="ayuda8"><b>- Notificaciones: </b>\nAvisos en tiempo real de respuestas a las figuritas publicadas y los intercambios solicitados.</string>
+    <string name="ayuda9"><b>Equipo</b></string>
+    <string name="ayuda10"><b>- Guillermo Becker </b>\nguille.becker.15@gmail.com</string>
+    <string name="ayuda11"><b>- Cristian Da Silva </b>\ncristiands094@gmail.com</string>
+    <string name="ayuda12"><b>- Mauro Rocca </b>\nmauroroccaf@gmail.com</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_tabbed">TabbedActivity</string>
 </resources>

@@ -2,6 +2,12 @@ apply plugin: 'com.android.application'
 
 repositories {
     maven {url 'https://maven.fabric.io/public'}
+
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://maven.google.com' }
 }
 
 android {
@@ -31,8 +37,30 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'
     testCompile 'junit:junit:4.12'
+
+    //Twitter
     compile ('com.twitter.sdk.android:twitter:2.2.0@aar'){
         transitive=true;
     }
+
+    //Facebook
     compile 'com.facebook.android:facebook-android-sdk:4.0.0'
+
+
+    // retrofit, gson
+    compile 'com.google.code.gson:gson:2.6.2'
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.mikhaellopez:circularimageview:3.0.2'
+    compile 'com.github.bumptech.glide:glide:4.2.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.2.0'
+    compile 'de.hdodenhof:circleimageview:2.2.0'
+    compile 'com.mikhaellopez:circularimageview:3.0.2'
+
+    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
+
+
 }
