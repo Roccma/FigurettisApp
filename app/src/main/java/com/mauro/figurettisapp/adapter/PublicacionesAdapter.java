@@ -12,6 +12,8 @@ import android.widget.Toast;
 import com.mauro.figurettisapp.R;
 import com.mauro.figurettisapp.model.Publicaciones;
 
+import java.io.IOError;
+import java.io.IOException;
 import java.util.List;
 
 import static com.facebook.FacebookSdk.getApplicationContext;
@@ -77,6 +79,7 @@ public class PublicacionesAdapter extends RecyclerView.Adapter<PublicacionesAdap
 
     @Override
     public int getItemCount() {
-        return publicaciones.size();
+            return publicaciones.size();
+//            return 0;
     }
 }

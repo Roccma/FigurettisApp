@@ -46,7 +46,7 @@ public class PublicacionesActivity extends AppCompatActivity
     private ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
 
     @Override
-    protected void OnCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.publicaciones);
 
@@ -61,7 +61,7 @@ public class PublicacionesActivity extends AppCompatActivity
                 final List<Publicaciones> publicaciones = response.body().getResults();
 
                 recyclerView.setAdapter(new PublicacionesAdapter(publicaciones, R.layout.list_item_publicacion, getApplicationContext()));
-                Log.d(TAG, "Number of publicaciones received: " + publicaciones.size());
+//                Log.d(TAG, "Number of publicaciones received: " + publicaciones.size());
             }
 
             @Override
