@@ -39,6 +39,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import com.Figurettis.FigurettisAR.UnityPlayerActivity;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -146,7 +148,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_registrarse) {
 
         } else if (id == R.id.nav_realidadAumentada) {
-            Intent ar = getPackageManager().getLaunchIntentForPackage("com.Figurettis.FigurettisAR");
+            /*Intent ar = getPackageManager().getLaunchIntentForPackage("com.Figurettis.FigurettisAR");
             if (ar != null) {
                 getApplicationContext().startActivity(ar);
             }
@@ -170,7 +172,9 @@ public class MainActivity extends AppCompatActivity
                         });
                 AlertDialog dialog = builder.create();
                 dialog.show();
-            }
+            }*/
+            Intent i = new Intent(this, UnityPlayerActivity.class);
+            startActivity(i);
         } else if (id == R.id.nav_figuritas) {
             Intent i = new Intent(this, Figuritas.class);
             startActivity(i);

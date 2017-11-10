@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Figurettis AR-debug/Figurettis AR-debug.iml" filepath="$PROJECT_DIR$/Figurettis AR-debug/Figurettis AR-debug.iml" />
       <module fileurl="file://$PROJECT_DIR$/FigurettisApp.iml" filepath="$PROJECT_DIR$/FigurettisApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
