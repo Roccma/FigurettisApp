@@ -75,7 +75,7 @@ public class Login extends AppCompatActivity
     public String nickname;
 
     private ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-    /**
+        /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */

@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class ApiClient {
-    public static final String BASE_URL_FIGURETTIS = "http://192.168.10.129:8080/Figurettis/";
+    public static final String BASE_URL_FIGURETTIS = "http://192.168.1.4:80/Figurettis/";
     private static Retrofit retrofit = null;
     /*private String ipServer;
     private String portServer;*/

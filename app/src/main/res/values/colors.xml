@@ -8,4 +8,6 @@
     <color name="colorTitulo2">#9A8453</color>
     <color name="colorFacebook">#3B5998</color>
     <color name="colorTwitter">#55ACEE</color>
+    <color name="colorBlack">#555555</color>
+    <color name="colorGreyLight">#8A8A8A</color>
 </resources>

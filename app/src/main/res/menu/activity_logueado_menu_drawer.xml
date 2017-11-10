@@ -28,6 +28,9 @@
             android:id="@+id/nav_realidadAumentada"
             android:icon="@mipmap/realidad_aumentada"
             android:title="Realidad aumentada" />
+        <item
+            android:id="@+id/nav_publicaciones"
+            android:title="Publicaciones"/>
     </group>
 
     <item android:title="Avisos">

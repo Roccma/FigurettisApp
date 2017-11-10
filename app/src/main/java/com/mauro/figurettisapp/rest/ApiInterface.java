@@ -1,6 +1,8 @@
 package com.mauro.figurettisapp.rest;
 
 import com.mauro.figurettisapp.model.LoginResponse;
+import com.mauro.figurettisapp.model.Publicaciones;
+import com.mauro.figurettisapp.model.PublicacionesResponse;
 import com.mauro.figurettisapp.model.Usuario;
 
 import retrofit2.Call;
@@ -19,4 +21,8 @@ public interface ApiInterface {
 
     @GET("usuarios.php/addUserSocialNetwork")
     Call<LoginResponse> addUserSocialNetwork(@Query("nickname") String nickname, @Query("nombre") String nombre, @Query("apellido") String apellido, @Query("contacto") String contacto, @Query("fotoPerfil") String fotoPerfil, @Query("aplicacion") String aplicacion);
+
+    @GET("publicaciones/getAllPublicaciones")
+    Call<PublicacionesResponse> getAllPublicaciones();
+
 }

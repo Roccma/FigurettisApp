@@ -238,7 +238,7 @@ public class Ayuda extends AppCompatActivity
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public void onResponse(Call<Usuario> call, Response<Usuario> response) {
-                String base_url_figurettis = "http://192.168.10.129:8080/Figurettis/";
+                String base_url_figurettis = "http://192.168.1.4:80/Figurettis/";
                 TextView txtNombreSession;
                 CircularImageView imgPerfil = (CircularImageView) findViewById(R.id.imgFotoPerfil);
                 String rutaFotoPerfil = "";

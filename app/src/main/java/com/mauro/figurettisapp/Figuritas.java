@@ -69,7 +69,7 @@ import retrofit2.Response;
 public class Figuritas extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    public static final String BASE_URL_FIGURETTIS = "http://192.168.10.129:8080/Figurettis/";
+    public static final String BASE_URL_FIGURETTIS = "http://192.168.1.4:80/Figurettis/";
     private ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
     private String session;
 
