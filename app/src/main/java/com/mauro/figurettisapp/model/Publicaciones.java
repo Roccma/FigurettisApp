@@ -7,50 +7,50 @@ import com.google.gson.annotations.SerializedName;
  */
 
 public class Publicaciones {
-    @SerializedName("codigo")
-    private Integer codigo;
-    @SerializedName("nicknameUsuario")
-    private String nicknameUsuario;
-    @SerializedName("numeroFigurita")
-    private Integer numeroFigurita;
+    @SerializedName("nombre")
+    private String nombre;
+    @SerializedName("imagen")
+    private String imagen;
+    @SerializedName("numero")
+    private Integer numero;
     @SerializedName("fechaHora")
     private String fechaHora;
     @SerializedName("cantidad")
     private Integer cantidad;
-    @SerializedName("estado")
-    private Integer estado;
+    @SerializedName("bandera")
+    private String bandera;
 
-    public Publicaciones(Integer codigo, String nicknameUsuario, Integer numeroFigurita, String fechaHora, Integer cantidad, Integer estado){
-        this.codigo = codigo;
-        this.nicknameUsuario = nicknameUsuario;
-        this.numeroFigurita = numeroFigurita;
+    public Publicaciones(String nombre, String imagen, Integer numero, String fechaHora, Integer cantidad, String bandera) {
+        this.nombre = nombre;
+        this.imagen = imagen;
+        this.numero = numero;
         this.fechaHora = fechaHora;
         this.cantidad = cantidad;
-        this.estado = estado;
+        this.bandera = bandera;
     }
 
-    public Integer getCodigo() {
-        return codigo;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setCodigo(Integer codigo) {
-        this.codigo = codigo;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getNicknameUsuario() {
-        return nicknameUsuario;
+    public String getImagen() {
+        return imagen;
     }
 
-    public void setNicknameUsuario(String nicknameUsuario) {
-        this.nicknameUsuario = nicknameUsuario;
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 
-    public Integer getNumeroFigurita() {
-        return numeroFigurita;
+    public Integer getNumero() {
+        return numero;
     }
 
-    public void setNumeroFigurita(Integer numeroFigurita) {
-        this.numeroFigurita = numeroFigurita;
+    public void setNumero(Integer numero) {
+        this.numero = numero;
     }
 
     public String getFechaHora() {
@@ -69,12 +69,12 @@ public class Publicaciones {
         this.cantidad = cantidad;
     }
 
-    public Integer getEstado() {
-        return estado;
+    public String getBandera() {
+        return bandera;
     }
 
-    public void setEstado(Integer estado) {
-        this.estado = estado;
+    public void setBandera(String bandera) {
+        this.bandera = bandera;
     }
-
 }
+

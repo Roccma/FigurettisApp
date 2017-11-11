@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -16,16 +17,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.CookieManager;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.facebook.AccessToken;
 import com.facebook.login.LoginManager;
 import com.mauro.figurettisapp.adapter.PublicacionesAdapter;
 import com.mauro.figurettisapp.model.Publicaciones;
 import com.mauro.figurettisapp.model.PublicacionesResponse;
+import com.mauro.figurettisapp.model.Usuario;
 import com.mauro.figurettisapp.rest.ApiClient;
 import com.mauro.figurettisapp.rest.ApiInterface;
+import com.mikhaellopez.circularimageview.CircularImageView;
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterCore;
 import com.twitter.sdk.android.core.TwitterSession;
@@ -44,6 +50,7 @@ public class PublicacionesActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private static final String TAG = PublicacionesActivity.class.getSimpleName();
     private ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
+    private NavigationView nav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -61,7 +68,7 @@ public class PublicacionesActivity extends AppCompatActivity
                 final List<Publicaciones> publicaciones = response.body().getResults();
 
                 recyclerView.setAdapter(new PublicacionesAdapter(publicaciones, R.layout.list_item_publicacion, getApplicationContext()));
-//                Log.d(TAG, "Number of publicaciones received: " + publicaciones.size());
+
             }
 
             @Override
@@ -69,12 +76,65 @@ public class PublicacionesActivity extends AppCompatActivity
                 Log.e(TAG, t.toString());
             }
         });
-
+//        //////////////
+//        nav = (NavigationView) findViewById(R.id.nav_view);
+//        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+//        String session = sharedPref.getString("session", "no");
+//        //Toast.makeText(getApplicationContext(), "Session: " + session, Toast.LENGTH_SHORT).show();
+//        if(!session.equals("no")){
+//            nav.inflateHeaderView(R.layout.nav_header_logueado_menu);
+//            nav.inflateMenu(R.menu.activity_logueado_menu_drawer);
+//            cargarDatosMenu();
+//        }
+//        else{
+//            nav.inflateHeaderView(R.layout.nav_header_no_logueado_menu);
+//            nav.inflateMenu(R.menu.activity_no_logueado_menu_drawer);
+//        }
+//
+//        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+//        navigationView.setNavigationItemSelectedListener(PublicacionesActivity.this);
+//        ////////////
     }
+
+//    @Override
+//    public void onBackPressed() {
+//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+//        if (drawer.isDrawerOpen(GravityCompat.START)) {
+//            drawer.closeDrawer(GravityCompat.START);
+//        } else {
+//            super.onBackPressed();
+//        }
+//    }
+
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+//        String session = sharedPref.getString("session", "no");
+//        //Toast.makeText(getApplicationContext(), "Session: " + session, Toast.LENGTH_SHORT).show();
+//        if(!session.equals("no"))
+//            getMenuInflater().inflate(R.menu.logueado_menu, menu);
+//        else
+//            getMenuInflater().inflate(R.menu.no_logueado_menu, menu);
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        // Handle action bar item clicks here. The action bar will
+//        // automatically handle clicks on the Home/Up button, so long
+//        // as you specify a parent activity in AndroidManifest.xml.
+//        int id = item.getItemId();
+//
+//        //noinspection SimplifiableIfStatement
+//
+//
+//        return super.onOptionsItemSelected(item);
+//    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+    public boolean onNavigationItemSelected(MenuItem item) {
         //return NoLogueadoMenu.onNavigationItemSelected(item);
         // Handle navigation view item clicks here.
         int id = item.getItemId();
@@ -185,4 +245,33 @@ public class PublicacionesActivity extends AppCompatActivity
         return true;
     }
 
+//    public void cargarDatosMenu(){
+//        String session;
+//        ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
+//        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+//        session = sharedPref.getString("session", "");
+//        Call<Usuario> callData = apiService.getSessionData(session.toString());
+//        callData.enqueue(new Callback<Usuario>() {
+//            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+//            @Override
+//            public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+//                String base_url_figurettis = "http://192.168.1.106:80/Figurettis/";
+//                TextView txtNombreSession;
+//                CircularImageView imgPerfil = (CircularImageView) findViewById(R.id.imgFotoPerfil);
+//                String rutaFotoPerfil = "";
+//                if (response.body().getAplicacion().equals("figurettis"))
+//                    rutaFotoPerfil = rutaFotoPerfil +  base_url_figurettis;
+//                rutaFotoPerfil = rutaFotoPerfil + response.body().getFotoPerfil();
+//                Glide.with(getApplicationContext()).load(rutaFotoPerfil).into(imgPerfil);
+//                Log.e("Login: ", response.body().getNombre() + " " + response.body().getApellido());
+//                txtNombreSession = (TextView) findViewById(R.id.txtNombreSession);
+//                txtNombreSession.setText(response.body().getNombre() + " " + response.body().getApellido());
+//            }
+//
+//            @Override
+//            public void onFailure(Call<Usuario> call, Throwable t) {
+//                Log.e("Login: ", t.toString());
+//            }
+//        });
+//    }
 }

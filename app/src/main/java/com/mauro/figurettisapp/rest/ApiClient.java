@@ -1,6 +1,9 @@
 package com.mauro.figurettisapp.rest;
 import android.util.Log;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -13,7 +16,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class ApiClient {
-    public static final String BASE_URL_FIGURETTIS = "http://192.168.1.4:80/Figurettis/";
+    public static final String BASE_URL_FIGURETTIS = "http://192.168.1.106:80/Figurettis/";
     private static Retrofit retrofit = null;
     /*private String ipServer;
     private String portServer;*/
@@ -32,10 +35,15 @@ public class ApiClient {
         } catch (IOException e) {
             e.printStackTrace();
         }*/
+
         if(retrofit == null){
+            Gson gson = new GsonBuilder()
+                    .setLenient()
+                    .create();
+
             retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL_FIGURETTIS)
-                    .addConverterFactory(GsonConverterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create(gson))
                     .build();
 
         }
