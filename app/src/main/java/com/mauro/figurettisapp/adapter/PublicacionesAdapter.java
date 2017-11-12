@@ -98,4 +98,14 @@ public class PublicacionesAdapter extends RecyclerView.Adapter<PublicacionesAdap
             return publicaciones.size();
 //            return 0;
     }
+
+//    public void updateList(List<Publicaciones> publicacionesUpdate, int rowLayoutUpdate, Context contextUpdate){
+    public void updateList(List<Publicaciones> publicacionesUpdate){
+
+        publicaciones = publicacionesUpdate;
+//        rowLayout = rowLayoutUpdate;
+//        context = contextUpdate;
+//        notifyDataSetChanged();
+
+    }
 }

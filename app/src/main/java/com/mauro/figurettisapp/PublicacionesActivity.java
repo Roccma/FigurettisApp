@@ -16,6 +16,9 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -36,11 +39,15 @@ import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterCore;
 import com.twitter.sdk.android.core.TwitterSession;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static com.mauro.figurettisapp.R.id.publicaciones_recycler_view;
+import static com.mauro.figurettisapp.R.id.text;
 
 /**
  * Created by Guille on 10/11/2017.
@@ -51,6 +58,8 @@ public class PublicacionesActivity extends AppCompatActivity
     private static final String TAG = PublicacionesActivity.class.getSimpleName();
     private ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
     private NavigationView nav;
+    private List<Publicaciones> Allpublicaciones;
+    private Integer cant = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -58,6 +67,7 @@ public class PublicacionesActivity extends AppCompatActivity
         setContentView(R.layout.publicaciones);
 
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.publicaciones_recycler_view);
+        final TextView searchFiled = (TextView) findViewById(R.id.search_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         Call<PublicacionesResponse> callData = apiService.getAllPublicaciones();
@@ -65,9 +75,9 @@ public class PublicacionesActivity extends AppCompatActivity
             @Override
             public void onResponse(Call<PublicacionesResponse> call, Response<PublicacionesResponse> response){
                 int statusCode = response.code();
-                final List<Publicaciones> publicaciones = response.body().getResults();
+               Allpublicaciones = response.body().getResults();
 
-                recyclerView.setAdapter(new PublicacionesAdapter(publicaciones, R.layout.list_item_publicacion, getApplicationContext()));
+                recyclerView.setAdapter(new PublicacionesAdapter(Allpublicaciones, R.layout.list_item_publicacion, getApplicationContext()));
 
             }
 
@@ -76,6 +86,45 @@ public class PublicacionesActivity extends AppCompatActivity
                 Log.e(TAG, t.toString());
             }
         });
+
+        searchFiled.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                filter(s.toString());
+            }
+        });
+    }
+
+        public void filter(String text){
+            if (cant == 2){
+                Log.e("asdas","asdasds");
+            }
+            text = text.toLowerCase();
+            List<Publicaciones> temp = new ArrayList();
+            for(Publicaciones d: Allpublicaciones){
+                if(d.getNombre().toLowerCase().contains(text)){
+                    temp.add(d);
+                }
+            }
+            PublicacionesAdapter publicacionesAdapter = new PublicacionesAdapter(temp, R.layout.list_item_publicacion, getApplicationContext());
+
+            final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.publicaciones_recycler_view);
+            recyclerView.setAdapter(publicacionesAdapter);
+//            publicacionesAdapter.updateList(temp, R.layout.list_item_publicacion, getApplicationContext());
+//            publicacionesAdapter.updateList(temp);
+            cant ++;
+        }
+
 //        //////////////
 //        nav = (NavigationView) findViewById(R.id.nav_view);
 //        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
@@ -94,7 +143,7 @@ public class PublicacionesActivity extends AppCompatActivity
 //        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 //        navigationView.setNavigationItemSelectedListener(PublicacionesActivity.this);
 //        ////////////
-    }
+//    }
 
 //    @Override
 //    public void onBackPressed() {
