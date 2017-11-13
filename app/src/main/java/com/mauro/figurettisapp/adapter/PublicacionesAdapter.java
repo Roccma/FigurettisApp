@@ -27,7 +27,7 @@ import static com.facebook.FacebookSdk.getApplicationContext;
  */
 
 public class PublicacionesAdapter extends RecyclerView.Adapter<PublicacionesAdapter.PublicacionesViewHolder> {
-    public static final String BASE_URL_FIGURETTIS = "http://192.168.1.106:80/Figurettis/";
+    public static final String BASE_URL_FIGURETTIS = "http://192.168.1.6:80/Figurettis/";
     private List<Publicaciones> publicaciones;
     private int rowLayout;
     private Context context;
@@ -63,7 +63,6 @@ public class PublicacionesAdapter extends RecyclerView.Adapter<PublicacionesAdap
 
     @Override
     public void onBindViewHolder(final PublicacionesViewHolder holder,final int position) {
-//        holder.imagen.setText(publicaciones.get(position).getImagen());
         String rutaFotoPerfil = "";
         String rutaBandera = "";
         rutaFotoPerfil = rutaFotoPerfil + BASE_URL_FIGURETTIS;
@@ -71,11 +70,8 @@ public class PublicacionesAdapter extends RecyclerView.Adapter<PublicacionesAdap
         rutaFotoPerfil = rutaFotoPerfil + publicaciones.get(position).getImagen();
         rutaBandera = rutaBandera + publicaciones.get(position).getBandera();
         Glide.with(holder.imagen.getContext()).load(rutaFotoPerfil).into(holder.imagen);
-//        Glide.with(getApplicationContext()).load(rutaFotoPerfil).into(holder.imagen);
         holder.nombre.setText(publicaciones.get(position).getNombre());
         String num = "Figurita N°: "+ publicaciones.get(position).getNumero().toString();
-//        String cant = "Cantidad : "+ publicaciones.get(position).getCantidad().toString();
-//        String bandera = publicaciones.get(position).getBandera();
 
         holder.numero.setTypeface(null, Typeface.BOLD_ITALIC);
         holder.numero.setText(num);
@@ -96,16 +92,10 @@ public class PublicacionesAdapter extends RecyclerView.Adapter<PublicacionesAdap
     @Override
     public int getItemCount() {
             return publicaciones.size();
-//            return 0;
     }
 
-//    public void updateList(List<Publicaciones> publicacionesUpdate, int rowLayoutUpdate, Context contextUpdate){
-    public void updateList(List<Publicaciones> publicacionesUpdate){
-
-        publicaciones = publicacionesUpdate;
-//        rowLayout = rowLayoutUpdate;
-//        context = contextUpdate;
-//        notifyDataSetChanged();
-
-    }
+//    public void updateList(List<Publicaciones> publicacionesUpdate){
+//
+//        publicaciones = publicacionesUpdate;
+//    }
 }

@@ -106,9 +106,7 @@ public class PublicacionesActivity extends AppCompatActivity
     }
 
         public void filter(String text){
-            if (cant == 2){
-                Log.e("asdas","asdasds");
-            }
+
             text = text.toLowerCase();
             List<Publicaciones> temp = new ArrayList();
             for(Publicaciones d: Allpublicaciones){
@@ -120,9 +118,6 @@ public class PublicacionesActivity extends AppCompatActivity
 
             final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.publicaciones_recycler_view);
             recyclerView.setAdapter(publicacionesAdapter);
-//            publicacionesAdapter.updateList(temp, R.layout.list_item_publicacion, getApplicationContext());
-//            publicacionesAdapter.updateList(temp);
-            cant ++;
         }
 
 //        //////////////
